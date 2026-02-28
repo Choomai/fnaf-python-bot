@@ -287,6 +287,8 @@ def detectStates():
     while True:
         # Getting a screenshot instead of calling pixel()
         # Without try it could throw a KeyboardInterrupt error
+        screenshot = None
+
         try:
             screenshot = pg.screenshot()
         except: pass

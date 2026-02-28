@@ -4,5 +4,6 @@ Once 3 stars are detected on the main menu, the program will stop.
 
 Required modules:
 - pyautogui
+- pillow (for pyautogui)
 - pynput
 - psutil (For detecting when the app opens; not needed to beat game)
