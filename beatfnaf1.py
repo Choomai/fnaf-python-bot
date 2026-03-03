@@ -133,6 +133,11 @@ def officeLoop():
     global foxyCheck
     global timedOut
 
+    # Initialize variables
+    foxyCheck = 0
+    leftDoorClosed = False
+    rightDoorClosed = False
+
     # East hall corner at the start of the night
     toggleCamera()
     waitUntil(isCamUp, 5.0)
@@ -207,7 +212,7 @@ def checkFoxy():
     foxyCheck = 0
     # Open camera and wait for it to open
     toggleCamera()
-    waitUntil(isCamUp)
+    waitUntil(isCamUp, 5.0)
     # Switch to the west hall briefly to make Foxy run if he's there
     camera("westHall")
     time.sleep(0.05)
@@ -417,6 +422,8 @@ def detectStates():
 if __name__ == "__main__":
     # listener = keyboard.Listener(on_press = onPress)
     # listener.start()
+
+    print("Program started! Waiting for game to open...")
 
     # Wait for the game to open before starting anything
     def isRunning(name):
